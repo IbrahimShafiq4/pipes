@@ -1,14 +1,14 @@
-Pipes Project: Basic Setup 🚀❤️
+# Pipes Project: Basic Setup 🚀❤️
 
-Welcome to the Pipes Project Basic Setup! This project will guide you through the fundamentals of using pipes in Angular. Follow the steps below to get started:
+## Welcome to the Pipes Project Basic Setup! This project will guide you through the fundamentals of using pipes in Angular. Follow the steps below to get started:
 
-Getting Started
+## Getting Started
 
 Install Dependencies: Run npm i to download the necessary dependencies, including node_modules and other files.
 
 Run Development Server: Launch the development server by running ng serve -o (or ng s --o). Navigate to http://localhost:4200/ in your browser. The app will automatically reload whenever you make changes to the source files.
 
-Covered Topics
+## Covered Topics
 Throughout this project, you will explore various aspects of using pipes in Angular. Here's a summary of what you'll learn:
 
 01 - Built-in Pipes: Utilizing Angular's built-in pipes for common data transformations such as date formatting, number formatting, and uppercase/lowercase conversions.
