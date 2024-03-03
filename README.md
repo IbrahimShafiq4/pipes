@@ -27,6 +27,6 @@ Throughout this project, you will explore various aspects of using pipes in Angu
 
 08 - Error Handling: Handling errors gracefully when using pipes and providing fallback values or error messages.
 
-By working through this project, you'll gain a solid understanding of using pipes in Angular and be well-equipped to perform various data transformations in your applications.
+### By working through this project, you'll gain a solid understanding of using pipes in Angular and be well-equipped to perform various data transformations in your applications.
 
-Feel free to customize the content further to better suit your project's needs.
+### Feel free to customize the content further to better suit your project's needs.
