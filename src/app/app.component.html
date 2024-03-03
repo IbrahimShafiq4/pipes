@@ -1,0 +1,207 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+
+      <button class="btn btn-block btn-primary" *ngIf="!addServer" (click)="onAddingAServer()" type="button">Add Server</button>
+      <form 
+        [formGroup]="serversForm" 
+        *ngIf="addServer" 
+        (ngSubmit)="onSubmit()">
+        
+        <div class="form-group">
+          <label for="instanceType">
+            Server InstanceType
+          </label>
+          <input 
+            type="text" 
+            formControlName="serverInstanceType" 
+            id="instanceType" 
+            class="form-control" />
+            <p class="error-text" *ngIf="serversForm.get('serverInstanceType').getError('required') && serversForm.get('serverInstanceType')?.touched">
+              Server InstanceType Is Required
+            </p>
+        </div>
+
+        <div class="form-group">
+          <label for="name">
+            Server Name
+          </label>
+          <input 
+            type="text" 
+            formControlName="serverName" 
+            id="name" 
+            class="form-control" />
+            <p class="error-text" *ngIf="serversForm.get('serverName').getError('required') && serversForm.get('serverName')?.touched">
+              Server Name Is Required
+            </p>
+        </div>
+
+        <div class="form-group">
+          <label for="date">
+            Server Date
+          </label>
+          <input 
+            type="date" 
+            formControlName="serverStarted" 
+            id="date"
+            class="form-control" />
+            <p class="error-text" *ngIf="serversForm.get('serverStarted').getError('required') && serversForm.get('serverStarted').touched">
+              Server Date Is Required
+            </p>
+        </div>
+
+        <div class="form-group">
+          <label for="status">
+            Server Status
+          </label>
+          <input 
+            type="text" 
+            formControlName="serverStatus" 
+            id="status" 
+            class="form-control" />
+            <p class="error-text" *ngIf="serversForm.get('serverStatus').getError('required') && serversForm.get('serverStatus').touched">
+              Server Status Is Required
+            </p>
+          </div>
+
+        <button class="btn btn-info" type="submit">Add</button>
+        <button class="btn btn-danger" type="submit" (click)="onCancel()">cancel</button>
+      </form>
+
+      <input 
+        type="text" 
+        class="form-control" 
+        placeholder="the filtration value"
+        [(ngModel)]="statusValue"
+        (input)="changeTheStatusValue()"
+      />
+
+      <input 
+        type="text" 
+        class="form-control" 
+        [placeholder]="placeholder"
+        [(ngModel)]="filteredStatus"
+      />
+
+      <ul class="list-group">
+        <li 
+          class="list-group-item"
+          (click)="onRemoveServer(i)"
+          *ngFor="let server of servers | filter : filteredStatus : statusValue; let i = index" 
+          [ngClass]="getStatusClasses(server)">
+          <span class="badge">
+            {{ server.status }}
+          </span>
+          <strong>{{ server.name | shorten : 15 }}</strong>
+          | {{ server.instanceType | uppercase }}
+          | {{ server.started | date : 'fullDate' | lowercase }}
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-xs-12 col-md-6 manipulation">
+
+      <h3>Manipulating With Pipes</h3>
+      <div class="list-group">
+        <div class="list-group-item list-item-div">
+          <p class="list-group-item-success">
+
+            <span class="data">
+              {{ userData | json }}
+            </span>
+
+            <span class="badge pipeType">
+              using jsonPipe
+            </span>
+
+          </p>
+
+          <p class="list-group-item-warning">
+
+            <span class="data">
+              {{ myLocalTime | date : 'fullDate' }}
+            </span>
+
+            <span class="badge pipeType">
+              using datePipe
+            </span>
+
+          </p>
+
+          <p class="list-group-item-danger">
+
+            <span class="data">
+              {{ appStatus | async }}
+            </span>
+
+            <span class="badge pipeType">
+              using asyncPipe
+            </span>
+
+          </p>
+
+          <p class="list-group-item-heading">
+
+            <span class="data">
+              {{ 'IbrahimShafiq' | lowercase }}
+            </span>
+
+            <span class="badge pipeType">
+              using lowercasePipe
+            </span>
+
+          </p>
+
+          <p class="list-group-item-info">
+
+            <span class="data">
+              {{ 'IbrahimShafiq' | uppercase }}
+            </span>
+
+            <span class="badge pipeType">
+              using uppercasePipe
+            </span>
+
+          </p>
+
+          <p class="list-group-item-text">
+
+            <span class="data">
+              {{ amountOfMoney | currency : 'EUR' }}
+            </span>
+
+            <span class="badge pipeType">
+              using currencyPipe
+            </span>
+
+          </p>
+
+          <p class="list-group-item-success">
+
+            <span class="data">
+              {{ percentValue | percent }}
+            </span>
+
+            <span class="badge pipeType">
+              using percentPipe
+            </span>
+
+          </p>
+
+          <p class="list-group-item-danger">
+
+            <span class="data">
+              {{ decimalValue | number }}
+            </span>
+
+            <span class="badge pipeType">
+              using decimalPipe
+            </span>
+
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

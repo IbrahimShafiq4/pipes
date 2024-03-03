@@ -1,0 +1,68 @@
+* {
+  font-family: monospace;
+}
+
+.container {
+  margin-top: 50px;
+}
+
+.list-item-div {
+  margin-bottom: 10px;
+  padding: 0;
+
+  p {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.form-control,
+.btn-block,
+form {
+  margin-bottom: 10px;
+}
+
+form button:not(:last-child) {
+  margin-right: 10px;
+}
+
+button:focus {
+  outline: none !important;
+}
+
+input {
+  transition: 0.5s linear;
+}
+
+input.ng-invalid.ng-touched {
+  border: 1px solid rgba(255, 0, 0, 0.3);
+  box-shadow: 0px 0px 8px rgba(255, 0, 0, 0.5);
+}
+
+.error-text {
+  color: rgba(255, 0, 0, 0.5);
+  text-shadow: 0px 0px 5px rgba(255, 0, 0, 0.2);
+  font-weight: bolder;
+}
+
+.row > div {
+  margin-bottom: 10px;
+}
+
+h3 {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+li {
+  transition: 0.2s linear;
+  cursor: pointer;
+}
+
+li:hover {
+  filter: opacity(0.5)
+}
