@@ -1,6 +1,8 @@
-# pipes
+# Angular pipes
+  welcome to angular pipes project here you can see some custom and build in pipes and also the built in pipes
+  
+# Getting Started
 
-Getting Started
 Install Dependencies:
 Run npm i to download the necessary dependencies, including node_modules and other files.
 
